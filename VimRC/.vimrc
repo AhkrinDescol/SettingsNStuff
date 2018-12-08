@@ -30,8 +30,11 @@ augroup END
 " (Also required to make hybrid-numbering work as desired.)
 inoremap <C-c> <ESC>
 
-" Remove GUI clutter
-set go=
+" Highlights columns 80 and 120
+set cc=80,120
+
+" Disables Ex mode
+noremap Q <Nop>
 
 " Configure LightLine
 set laststatus=2
@@ -47,20 +50,21 @@ set background=dark
 set guifont=Source\ Code\ Pro\ Semibold\ 10
 
 " Function-key bindings
-map <F10> :NERDTreeToggle<CR>
-map <F11> :Files<CR>
+noremap <F10> :NERDTreeToggle<CR>
+noremap <F11> :Files<CR>
 
 " Core bindings
-" Change leader to <Space>
-nnoremap <SPACE> <Nop>
-map <SPACE> <leader>
+" Change leader to <Space> (dirty hack, avoid map)
+" map <SPACE> <Nop>
+" map <SPACE> <leader>
+let mapleader = " "
 " Split-pane navigation shortcuts
-map <Leader>l <C-w>l
-map <Leader>h <C-w>h
-map <Leader>j <C-w>j
-map <Leader>k <C-w>k
+nnoremap <Leader>l <C-w>l
+nnoremap <Leader>h <C-w>h
+nnoremap <Leader>j <C-w>j
+nnoremap <Leader>k <C-w>k
 " Close buffer without writing or override (for splits)
-map <Leader>q :q<CR>
+nnoremap <Leader>q :q<CR>
 
 " Alternate bindings
-map <Leader>a :A<CR>
+nnoremap <Leader>a :A<CR>
